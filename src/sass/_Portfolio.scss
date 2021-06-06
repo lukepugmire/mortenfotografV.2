@@ -1,0 +1,193 @@
+.portfolio_container {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //PORTFOLIO CAROUSEL START
+  .portfolio_slider {
+    margin-bottom: 6rem;
+    margin-top: 4rem;
+    .carousel-control-prev {
+      opacity: 1;
+    }
+    .carousel-control-prev .carousel-control-prev-icon {
+      background-image: none;
+      background-color: $background-dark;
+      width: 40%;
+      height: 2px;
+      transition: 1s ease-out;
+    }
+    .carousel-control-prev:hover .carousel-control-prev-icon {
+      width: 80%;
+    }
+    .carousel-control-next {
+      opacity: 1;
+    }
+    .carousel-control-next .carousel-control-next-icon {
+      background-image: none;
+      background-color: $background-dark;
+      width: 40%;
+      height: 2px;
+      transition: 1s ease-out;
+    }
+    .carousel-control-next:hover .carousel-control-next-icon {
+      width: 80%;
+    }
+  }
+
+  //PORTFOLIO CAROUSEL END
+  //GALLERY LINK FOR ALL GALLERIES Start
+  .gallery_link {
+    text-decoration: none;
+    color: $nav-links;
+    text-transform: uppercase;
+    font-family: Open Sans Condensed;
+    letter-spacing: 4px;
+    transition: 2s ease;
+    display: inline-block;
+    position: relative;
+  }
+  .gallery_link:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -5px;
+    left: 0;
+    background-color: $nav-links;
+    transform-origin: right;
+    transition: transform 0.25s ease-out;
+  }
+  .gallery_link:hover:after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  //GALLERY LINK FOR ALL GALLERIES End
+  //WEDDINGS CONTAINER Start
+  .weddings_container {
+    margin-bottom: 6rem;
+    border-bottom: 1px solid $nav-links;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 80%;
+    .wedding_gallery {
+      width: 300px;
+      height: 460px;
+      margin: 25px;
+      .gallery_title_link {
+        font-size: 30px;
+        font-family: Cormorant + Garamond;
+        letter-spacing: 2px;
+        color: $styled-text;
+        line-height: 24px;
+        text-decoration: underline;
+      }
+      p {
+        font-size: 14px;
+      }
+      .wedding_card_img {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 180px;
+        margin: 5% 0%;
+      }
+    }
+    .wedding_gallery_1 .wedding_card_img {
+      background-image: url(../imgs/henriette_anders/img5.jpg);
+    }
+
+    .wedding_gallery_2 .wedding_card_img {
+      background-image: url(../imgs/tore_renate/img40.jpg);
+    }
+  }
+  //WEDDINGS CONTAINER end
+  //FILMS CONTAINER Start
+  .Film_heading {
+    font-size: 36px;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    font-family: Cormorant + Garamond;
+  }
+  .film_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 80%;
+    border-bottom: 1px solid $nav-links;
+
+    .example_film {
+      display: flex;
+      justify-content: center;
+      iframe {
+        width: 400px;
+        height: 300px;
+        padding: 0;
+        margin: 0;
+      }
+    }
+    .film_container_text {
+      width: 300px;
+      margin: 25px;
+      .heading {
+        display: none;
+      }
+    }
+  }
+  //FILMS CONTAINER End
+  //KONFIRMASJONS CONTAINER Start
+  //KONFIRMASJONS CONTAINER End
+}
+
+@media only screen and (min-width: 800px) {
+  .portfolio_container {
+    //PORTFOLIO CAROUSEL START
+    .portfolio_slider {
+      width: 90%;
+      margin-bottom: 6rem;
+      margin-top: 4rem;
+    }
+    //PORTFOLIO CAROUSEL END
+    //WEDDINGS CONTAINER START
+    .weddings_container {
+      justify-content: space-around;
+      width: 1200px;
+      .wedding_gallery {
+        width: 350px;
+        height: 500px;
+        margin: 25px;
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+    //WEDDINGS CONTAINER END
+    //FILMS CONTAINER Start
+    .Film_heading {
+      display: none;
+    }
+    .film_container {
+      width: 1200px;
+      justify-content: space-around;
+      .example_film {
+        margin: 25px 0px;
+        iframe {
+          padding: 0;
+          margin: 0;
+        }
+      }
+      .film_container_text {
+        width: 350px;
+        margin: 25px 0px;
+        padding-left: 1rem;
+        .heading {
+          display: block;
+        }
+      }
+    }
+    //FILMS CONTAINER End
+  }
+}
